@@ -62,7 +62,7 @@ public class Array<T> implements Iterable<T> {
 
     public boolean remove(T elem) {
         for (int i = 0; i < len; i++) {
-            if (arr[i] == elem) {
+            if (arr[i].equals(elem)) {
                 removeAt(i);
                 return true;
             }
@@ -72,7 +72,7 @@ public class Array<T> implements Iterable<T> {
 
     public int indexOf(T elem) {
         for (int i = 0; i < len; i++)
-            if (arr[i] == elem)
+            if (arr[i].equals(elem))
                 return i;
         return -1;
     }
