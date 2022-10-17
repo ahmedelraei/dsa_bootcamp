@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Array<Integer> arr = new Array<>(10);
+        Array<Integer> arr = new Array<>(3);
         arr.add(10);
         arr.add(20);
         arr.add(30);
