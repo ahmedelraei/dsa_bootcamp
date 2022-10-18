@@ -1,15 +1,17 @@
 public class Main {
     public static void main(String[] args) {
-        Array<Integer> arr = new Array<>(3);
-        arr.add(10);
-        arr.add(20);
-        arr.add(30);
-        arr.add(40);
-        arr.add(50);
-        arr.add(60);
-        arr.add(70);
-        System.out.println(arr);
-        System.out.println(arr.remove(20));
-        System.out.println(arr);
+
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+        list.addToHead(15);
+        list.addToTail(25);
+        System.out.println(list);
+        list.add(77, 4);
+        System.out.println(list);
+
+
     }
 }
