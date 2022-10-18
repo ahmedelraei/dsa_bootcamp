@@ -91,7 +91,7 @@ public class Array<T> implements Iterable<T> {
             }
 
             public T next() {
-                return arr[index];
+                return arr[index++];
             }
         };
     }
