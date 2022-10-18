@@ -49,7 +49,7 @@ public class Array<T> implements Iterable<T> {
     }
 
     public T removeAt(int index) {
-        if (index > len || index < 0) throw new IndexOutOfBoundsException();
+        if (index >= len || index < 0) throw new IndexOutOfBoundsException();
         T removed_elem = arr[index];
         T[] new_arr = (T[]) new Object[len - 1];
         for (int i = 0, j = 0; i < len; i++, j++)
