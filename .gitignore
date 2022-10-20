@@ -1,2 +1,7 @@
 .idea/
 out/
+*.class
+dependencies
+bin/
+.DS_Store
+*/META-INF/*

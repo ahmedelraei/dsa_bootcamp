@@ -1,8 +1,10 @@
+package com.ahmedhatem.collections;
+
 import java.util.EmptyStackException;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-// Stack implemented with LinkedList
+// com.ahmedhatem.collections.Stack implemented with LinkedList
 public class Stack<T> implements Iterable<T> {
     private LinkedList<T> list = new LinkedList<>();
 
@@ -25,9 +27,9 @@ public class Stack<T> implements Iterable<T> {
         list.addLast(elem);
     }
 
-    public void pop() {
+    public T pop() {
         if (isEmpty()) throw new EmptyStackException();
-        list.removeLast();
+        return list.removeLast();
     }
 
     public T peek() {

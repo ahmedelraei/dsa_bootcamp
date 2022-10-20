@@ -1,3 +1,5 @@
+package com.ahmedhatem.collections;
+
 @SuppressWarnings("unchecked")
 public class Array<T> implements Iterable<T> {
     private T[] arr;

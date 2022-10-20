@@ -1,3 +1,5 @@
+package com.ahmedhatem.collections;
+
 import java.util.Iterator;
 
 public class DoublyLinkedList<T> implements Iterable<T> {
@@ -24,8 +26,8 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         addToTail(elem);
     }
 
-    public void add(T elem, int index) {
-        if (index < 0 || index > size) throw new IllegalArgumentException("Illegal index!");
+    public void add(int index, T elem) {
+        if (index < 0 || index > size) throw new IllegalArgumentException("Illegal index: " + index);
         if (index == 0) addToHead(elem);
         else if (index == size) addToTail(elem);
         else {
@@ -97,6 +99,8 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
         node = node.next = node.prev = null;
 
+        size--;
+
         return removed;
     }
 
@@ -126,7 +130,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             }
         } else {
             while (current != null) {
-                if (current.data.equals(obj)) {
+                if (obj.equals(current.data)) {
                     remove(current);
                     return true;
                 }
@@ -136,6 +140,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         return false;
     }
 
+
     public int indexOf(Object obj) {
         Node<T> current = head;
         if (obj == null) {
@@ -144,7 +149,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
         } else {
             for (int i = 0; current != null; current = current.next, i++)
-                if (current.data.equals(obj)) return i;
+                if (obj.equals(current.data)) return i;
         }
         return -1;
     }
@@ -190,16 +195,17 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
     @Override
     public String toString() {
-        if (isEmpty()) return "[]";
         StringBuilder sb = new StringBuilder();
-        sb.append('[');
+        sb.append("[ ");
         Node<T> current = head;
-        while (current.next != null) {
-            sb.append(current.data).append(", ");
+        while (current != null) {
+            sb.append(current.data);
+            if (current.next != null) {
+                sb.append(", ");
+            }
             current = current.next;
         }
-        sb.append(current.data).append(", ");
-        sb.append(']');
+        sb.append(" ]");
         return sb.toString();
     }
 
