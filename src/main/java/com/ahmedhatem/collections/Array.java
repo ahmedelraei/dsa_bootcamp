@@ -38,7 +38,7 @@ public class Array<T> implements Iterable<T> {
         len = 0;
     }
 
-    public int add(T elem) {
+    public void add(T elem) {
         if (len + 1 > capacity) {
             if (isEmpty()) capacity = 1;
             else capacity *= 2;
@@ -47,7 +47,6 @@ public class Array<T> implements Iterable<T> {
             arr = new_arr;
         }
         arr[len++] = elem;
-        return len;
     }
 
     public T removeAt(int index) {
